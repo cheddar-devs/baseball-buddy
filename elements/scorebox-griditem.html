@@ -3,8 +3,10 @@
   <link rel="import" type="css" href="css/scorebox-griditem.css">
   <link rel="stylesheet" href="http://daigofuji.github.io/bbclub-font/css/bbclub-font.css">
   <template>
+
       <tr class$="{{determineSuccess(homeScore, awayScore)}}"><td class="name"> <i class$="{{homeAbbrevCalc(homeAbrev)}}"></i> {{homeName}}</td> <td class="score">{{homeScore}}</td></tr>
       <tr class$="{{determineSuccess(awayScore, homeScore)}}"><td class="name"> <i class$="{{awayAbbrevCalc(awayAbrev)}}"></i> {{awayName}}</td> <td class="score">{{awayScore}}</td></tr>
+    
   </template>
 
   <script src="js/scorebox-griditem.js"></script>

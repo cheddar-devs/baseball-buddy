@@ -1,3 +1,6 @@
+<link ng-if="isThemeDark(gameData.theme)" href="css/bootstrap.dark.min.css" rel="stylesheet" media="screen">
+<link ng-if="isThemeBlue(gameData.theme)" href="css/bootstrap.blue.min.css" rel="stylesheet" media="screen">
+
 <center><div class="alert alert-success" id="notifyBox" role="alert">Settings Updated</div></center>
 
 <form>
@@ -6,9 +9,9 @@
 		<div class="field">
 			<select class="form-control" id="themeSelect">
 				<option value="{{gameData.theme}}">{{gameData.theme}}</option>
-				<option ng-if="isSelectedTheme('Plain')" value="Plain">Plain</option>
-				<option ng-if="isSelectedTheme('Striped')" value="Striped">Striped</option>
-				<option ng-if="isSelectedTheme('None')" value="None">None</option>
+				<option ng-if="isSelectedTheme('Light')" value="Light">Light</option>
+				<option ng-if="isSelectedTheme('Dark')" value="Dark">Dark</option>
+				<option ng-if="isSelectedTheme('Blue')" value="Blue">Blue</option>
 			</select>
 		</div>
 		<br/ >
@@ -17,23 +20,13 @@
 			<select class="form-control" id="favoriteSelect">
 				<option>{{favoriteTeam}}</option>
 				<option ng-if="isFavoriteTeam('None')">None</option>
-				<option ng-repeat="team in teamList.teams"  ng-if="isFavoriteTeam(team.name)">{{team.name}}</option>
+				<option ng-repeat="team in teamList"  ng-if="isFavoriteTeam(team)">{{team}}</option>
 			</select>
-		</div>
-
-		<div class="field">
-		<div class="checkbox">
-		    <label>
-		      	<input ng-if="isGeneratorEnabled()" id="generatorEnabled" type="checkbox" checked> 
-				<input ng-if="!isGeneratorEnabled()" id="generatorEnabled" type="checkbox"> 
-		      	Game Thread Generator Enabled
-		    </label>
-		  </div>
 		</div>
 	</div>
 	<div class="field" ng-click="saveSettings()">
 		<button type="submit" class="btn btn-default">Save</button>
 	</div>
 
-	
+
 </form>

@@ -18,7 +18,11 @@ Polymer({
       value: 0
     },
     homeAbrev: String,
-    awayAbrev: String
+    awayAbrev: String,
+    favoriteTeam: {
+      type: String,
+      value: "None"
+    }
   },
   homeAbbrevCalc: function(homeAbrev){
     return "bb-" + homeAbrev;
@@ -27,7 +31,7 @@ Polymer({
     return "bb-" + awayAbrev;
   },
   determineSuccess: function(teamOneScore, teamTwoScore){
-    if(teamOneScore > teamTwoScore)
+    if(parseInt(teamOneScore) > parseInt(teamTwoScore))
       return "success";
     else {
       return "danger";

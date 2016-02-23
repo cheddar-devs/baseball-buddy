@@ -9,9 +9,8 @@
         handle-as="json"
         last-response="{{ajaxResponse}}"
         on-response="gridLoaded"></iron-ajax>
-
               <template is="dom-repeat" items="[[ajaxResponse.data.games.game]]">
-                <div class="content">
+                <div class$="content {{showOnlyFavorite(item.home_team_name, item.away_team_name, favoriteTeam)}}">
                     <div class="table">
                       <scorebox-griditem
                         home-name="[[item.home_team_name]]"
@@ -19,7 +18,23 @@
                         home-score="[[item.linescore.r.home]]"
                         away-score="[[item.linescore.r.away]]"
                         home-abrev="[[item.home_name_abbrev]]"
-                        away-abrev="[[item.away_name_abbrev]]">
+                        away-abrev="[[item.away_name_abbrev]]"
+                        favorite-team="{{favoriteTeam}}">
+                      </scorebox-griditem>
+                    </div>
+                  </div>
+              </template>
+              <template is="dom-repeat" items="[[ajaxResponse.data.games.game]]">
+                <div class$="content {{isFavorite(item.home_team_name, item.away_team_name, favoriteTeam)}}">
+                    <div class="table">
+                      <scorebox-griditem
+                        home-name="[[item.home_team_name]]"
+                        away-name="[[item.away_team_name]]"
+                        home-score="[[item.linescore.r.home]]"
+                        away-score="[[item.linescore.r.away]]"
+                        home-abrev="[[item.home_name_abbrev]]"
+                        away-abrev="[[item.away_name_abbrev]]"
+                        favorite-team="{{favoriteTeam}}">
                       </scorebox-griditem>
                     </div>
                   </div>
