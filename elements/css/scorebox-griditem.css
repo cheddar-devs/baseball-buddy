@@ -1,0 +1,28 @@
+td{
+  list-style: none;
+  font-size: 16px;
+  text-align: left !important;
+}
+.score{
+  width: 100px
+}
+
+.name{
+  width: 150px;
+}
+
+tr{
+  margin-left: 30px !important;
+}
+
+i{
+  padding-right: 5px;
+}
+
+.success{
+  font-weight: bold;
+}
+
+.danger{
+  font-style: italic;
+}

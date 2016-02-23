@@ -21,6 +21,7 @@
     "bootstrap": "^3.3.6",
     "angular-route": "^1.5.0",
     "angular-resource": "^1.5.0",
-    "angular-moment": "^0.10.3"
+    "angular-moment": "^0.10.3",
+    "iron-ajax": "PolymerElements/iron-ajax#^1.1.1"
   }
 }
