@@ -5,7 +5,7 @@
   <template>
     <link href="css/scorebox-grid.css" rel="stylesheet" media="screen">
     <iron-ajax auto
-        url="http://mlb.mlb.com/gdcross/components/game/mlb/year_2015/month_03/day_28/master_scoreboard.json"
+        url$="http://mlb.mlb.com/gdcross/components/game/mlb/{{getCurrentDay()}}/master_scoreboard.json"
         handle-as="json"
         last-response="{{ajaxResponse}}"
         on-response="gridLoaded"></iron-ajax>
