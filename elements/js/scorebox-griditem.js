@@ -48,7 +48,7 @@ Polymer({
     return "";
   },
   getGameInfo: function(status){
-    if(status === "Preview")
+    if(status === "Preview" || status === "Pre-Game")
       return this.time + " " + "ET";
     if(status === "In Progress"){
       return this.inningNum;
