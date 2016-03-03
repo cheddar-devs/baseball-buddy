@@ -42,5 +42,15 @@ Polymer({
     return "year_" + year + "/month_" + month + "/day_" + day;
 
     //"year_2015/month_03/day_28"
+  },
+  isInProgressTop: function(status){
+    if(status === "In Progress")
+      return ""
+    else return "hide";
+  },
+  isInProgressDown: function(status){
+    if(status === "In Progress")
+      return "hide"
+    else return "";
   }
 });

@@ -9,9 +9,11 @@
         handle-as="json"
         last-response="{{ajaxResponse}}"
         on-response="gridLoaded"></iron-ajax>
+        <!-- Favorite -->
               <template is="dom-repeat" items="[[ajaxResponse.data.games.game]]">
                 <div class$="content {{showOnlyFavorite(item.home_team_name, item.away_team_name, favoriteTeam)}}">
-                    <div class="table">
+                    <!-- <div class="table"> -->
+                    <table class="content">
                       <scorebox-griditem
                         home-name="[[item.home_team_name]]"
                         away-name="[[item.away_team_name]]"
@@ -19,14 +21,22 @@
                         away-score="[[item.linescore.r.away]]"
                         home-abrev="[[item.home_name_abbrev]]"
                         away-abrev="[[item.away_name_abbrev]]"
-                        favorite-team="{{favoriteTeam}}">
+                        favorite-team="{{favoriteTeam}}"
+                        status="[[item.status.status]]"
+                        top-inning="[[item.status.top_inning]]"
+                        time="[[item.time]]"
+                        tz="[[item.time_zone]]"
+                        inning-num="[[item.status.inning]]">
                       </scorebox-griditem>
-                    </div>
+                    </table>
+                    <!-- </div> -->
                   </div>
               </template>
+              <!-- In Progress -->
               <template is="dom-repeat" items="[[ajaxResponse.data.games.game]]">
-                <div class$="content {{isFavorite(item.home_team_name, item.away_team_name, favoriteTeam)}}">
-                    <div class="table">
+                <div class$="content {{isFavorite(item.home_team_name, item.away_team_name, favoriteTeam)}} {{isInProgressTop(item.status.status)}}">
+                    <!-- <div class="table"> -->
+                    <table class="content">
                       <scorebox-griditem
                         home-name="[[item.home_team_name]]"
                         away-name="[[item.away_team_name]]"
@@ -34,9 +44,38 @@
                         away-score="[[item.linescore.r.away]]"
                         home-abrev="[[item.home_name_abbrev]]"
                         away-abrev="[[item.away_name_abbrev]]"
-                        favorite-team="{{favoriteTeam}}">
+                        favorite-team="{{favoriteTeam}}"
+                        status="[[item.status.status]]"
+                        top-inning="[[item.status.top_inning]]"
+                        time="[[item.time]]"
+                        tz="[[item.time_zone]]"
+                        inning-num="[[item.status.inning]]">
                       </scorebox-griditem>
-                    </div>
+                    </table>
+                    <!-- </div> -->
+                  </div>
+              </template>
+
+              <template is="dom-repeat" items="[[ajaxResponse.data.games.game]]">
+                <div class$="content {{isFavorite(item.home_team_name, item.away_team_name, favoriteTeam)}} {{isInProgressDown(item.status.status)}}">
+                    <!-- <div class="table"> -->
+                    <table class="content">
+                      <scorebox-griditem
+                      home-name="[[item.home_team_name]]"
+                      away-name="[[item.away_team_name]]"
+                      home-score="[[item.linescore.r.home]]"
+                      away-score="[[item.linescore.r.away]]"
+                      home-abrev="[[item.home_name_abbrev]]"
+                      away-abrev="[[item.away_name_abbrev]]"
+                      favorite-team="{{favoriteTeam}}"
+                      status="[[item.status.status]]"
+                      top-inning="[[item.status.top_inning]]"
+                      time="[[item.time]]"
+                      tz="[[item.time_zone]]"
+                      inning-num="[[item.status.inning]]">
+                      </scorebox-griditem>
+                    </table>
+                    <!-- </div> -->
                   </div>
         </template>
 

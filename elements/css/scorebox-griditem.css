@@ -1,18 +1,26 @@
+
 td{
   list-style: none;
   font-size: 16px;
   text-align: left !important;
 }
 .score{
-  width: 100px
+  max-width: 100px;
+  min-width: 50px;
+  padding-left: 5px;
 }
 
 .name{
   width: 150px;
 }
 
+.gameInfo{
+  text-align: center; vertical-align: center;
+}
+
 tr{
   margin-left: 30px !important;
+  width: 100%;
 }
 
 i{
@@ -25,4 +33,12 @@ i{
 
 .danger{
   font-style: italic;
+}
+
+.scoreBox{
+
+}
+
+.hide{
+  display: none;
 }
